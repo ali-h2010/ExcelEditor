@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ExcelEditor.MainPage"
+             xmlns:syncfusion="clr-namespace:Syncfusion.SfDataGrid.XForms;assembly=Syncfusion.SfDataGrid.XForms" xmlns:local="clr-namespace:ExcelEditor.Repo" xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"            
+             ios:Page.UseSafeArea="true">
+
+    <ContentPage.BindingContext>
+        <local:OrderInfoRepository x:Name="viewModel" />
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+        <syncfusion:SfDataGrid x:Name="dataGrid" AllowEditing="True"
+                       SelectionMode="Multiple"    
+                       NavigationMode="Cell" 
+                       AutoGenerateColumns="True"
+                       EditTapAction="OnDoubleTap"
+                               ItemsSource="{Binding OrderInfoCollection}">
+            
+        </syncfusion:SfDataGrid>
+    </ContentPage.Content>
+
+</ContentPage>
+
