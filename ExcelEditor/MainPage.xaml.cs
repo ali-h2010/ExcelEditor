@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.IO;
 using System.Linq;
+using System.Net.Http;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
@@ -250,9 +251,63 @@ namespace ExcelEditor
             }
         }
 
+        public async Task GetExcelFileFromWebAPI()
+        {
+            //string URL = "https://sub.domain.com/objects.json";
+            //string urlParameters = "?api_key=123";
+            //HttpClient client = new HttpClient();
+            //client.BaseAddress = new Uri(URL);
+
+            //// Add an Accept header for JSON format.
+            ////client.DefaultRequestHeaders.Accept.Add(
+            ////new MediaTypeWithQualityHeaderValue("application/json"));
+
+            //// List data response.
+            //HttpResponseMessage response = client.GetAsync(urlParameters).Result;  // Blocking call! Program will wait here until a response is received or a timeout occurs.
+            //if (response.IsSuccessStatusCode)
+            //{
+            //    // Parse the response body.
+            //    var dataObjects = response.Content.ReadAsAsync<IEnumerable<DataObject>>().Result;  //Make sure to add a reference to System.Net.Http.Formatting.dll
+            //    foreach (var d in dataObjects)
+            //    {
+            //        Console.WriteLine("{0}", d.Name);
+            //    }
+            //}
+            //else
+            //{
+            //    Console.WriteLine("{0} ({1})", (int)response.StatusCode, response.ReasonPhrase);
+            //}
+
+            //// Make any other calls using HttpClient here.
+
+            //// Dispose once all HttpClient calls are complete. This is not necessary if the containing object will be disposed of; for example in this case the HttpClient instance will be disposed automatically when the application terminates so the following call is superfluous.
+            //client.Dispose();
+
+            var client = new HttpClient();
+            var response = await client.GetAsync(@"http://localhost:18053/weatherforecast");
+
+            using (var stream = await response.Content.ReadAsStreamAsync())
+            {
+                //var fileInfo = new FileInfo("myPackage.zip");
+                //using (var fileStream = fileInfo.OpenWrite())
+                //{
+                //    await stream.CopyToAsync(fileStream);
+                //}
+
+                var oStream = new MemoryStream();
+              
+                stream.CopyTo(oStream);
+
+
+                await Xamarin.Forms.DependencyService.Get<ISave>().SaveAndView("GettingStared.xlsx", "application/msexcel", oStream);
+            }
+
+        }
+
         void Button_Clicked(System.Object sender, System.EventArgs e)
         {
-            CreateExcel();
+            //CreateExcel();
+            GetExcelFileFromWebAPI();
         }
 
     }
