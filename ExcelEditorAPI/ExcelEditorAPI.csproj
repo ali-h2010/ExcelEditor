@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Workplace.xls" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Workplace.xls" />
+  </ItemGroup>
+</Project>

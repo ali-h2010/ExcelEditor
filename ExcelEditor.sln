@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExcelEditor.iOS", "ExcelEdi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExcelEditor", "ExcelEditor\ExcelEditor.csproj", "{62D0C7EC-EAC5-4619-81F8-5CC1190174C4}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WebAPI", "WebAPI", "{6D525657-25A8-4D14-A36E-F6743FA6E1D1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExcelEditorAPI", "ExcelEditorAPI\ExcelEditorAPI.csproj", "{069C3976-CB45-4D96-9FEA-44970DA4C54E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -55,11 +59,26 @@ Global
 		{62D0C7EC-EAC5-4619-81F8-5CC1190174C4}.Debug|iPhone.Build.0 = Debug|Any CPU
 		{62D0C7EC-EAC5-4619-81F8-5CC1190174C4}.Release|iPhone.ActiveCfg = Release|Any CPU
 		{62D0C7EC-EAC5-4619-81F8-5CC1190174C4}.Release|iPhone.Build.0 = Release|Any CPU
+		{069C3976-CB45-4D96-9FEA-44970DA4C54E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{069C3976-CB45-4D96-9FEA-44970DA4C54E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{069C3976-CB45-4D96-9FEA-44970DA4C54E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{069C3976-CB45-4D96-9FEA-44970DA4C54E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{069C3976-CB45-4D96-9FEA-44970DA4C54E}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{069C3976-CB45-4D96-9FEA-44970DA4C54E}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{069C3976-CB45-4D96-9FEA-44970DA4C54E}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{069C3976-CB45-4D96-9FEA-44970DA4C54E}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{069C3976-CB45-4D96-9FEA-44970DA4C54E}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{069C3976-CB45-4D96-9FEA-44970DA4C54E}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{069C3976-CB45-4D96-9FEA-44970DA4C54E}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{069C3976-CB45-4D96-9FEA-44970DA4C54E}.Release|iPhone.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {DD412E52-EB9D-4845-BC2C-272FF8972D1D}
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{069C3976-CB45-4D96-9FEA-44970DA4C54E} = {6D525657-25A8-4D14-A36E-F6743FA6E1D1}
 	EndGlobalSection
 EndGlobal

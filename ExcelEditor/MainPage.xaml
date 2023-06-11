@@ -10,15 +10,20 @@
     </ContentPage.BindingContext>
 
     <ContentPage.Content>
-        <syncfusion:SfDataGrid x:Name="dataGrid" AllowEditing="True"
+        <StackLayout>
+            <Label Text="Test" />
+            <Button Text="Create Excel" Clicked="Button_Clicked" />
+             <syncfusion:SfDataGrid x:Name="dataGrid" AllowEditing="True"
                        SelectionMode="Multiple"    
                        NavigationMode="Cell" 
                        AutoGenerateColumns="True"
                        EditTapAction="OnDoubleTap"
-                               ItemsSource="{Binding OrderInfoCollection}">
+                              >
             
-        </syncfusion:SfDataGrid>
-    </ContentPage.Content>
+            </syncfusion:SfDataGrid>
+        </StackLayout>
+       
+    </ContentPage.Content>  
 
 </ContentPage>
 
